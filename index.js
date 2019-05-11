@@ -31,8 +31,8 @@
         }
     }
 
-    let s1 = new Score(1,'JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays', '05/05/2019', '', 'Not submitted yet', 0, '../Javascript1/JavaScript1.html','');
-    let s2 = new Score(2,'JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation', '05/06/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
+    let s1 = new Score(1, 'JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays', '05/10/2019', '05/10/2019', 'first attempt. please review', 0, '../Javascript1/JavaScript1.html','');
+    let s2 = new Score(2, 'JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation', '05/10/2019', '05/10/2019', 'first attempt. please review', 0, '../Javascript2/JavaScript2.html', '');
     let s3 = new Score(3,'JSON Parse, Stringify', '05/17/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
     let s4 = new Score(4, 'AJAX requesting a JSON file', '05/17/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
     let s5 = new Score(5, 'Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects', '05/24/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
