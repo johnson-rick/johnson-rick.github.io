@@ -61,9 +61,11 @@
     color: #0F2027;
 }
 
-#product-grid {
+#books-grid {
     margin: 0 auto;
     padding-top: 10px;
+    border: 1px;
+    visibility: visible;
 }
 
 .txt-heading {
@@ -178,4 +180,17 @@ input:required:hover {
 .center{
     text-align:center;
 }
+.required {
+    text-decoration-color: red;
+    color:red
+}
 
+.visible {
+    visibility: visible;
+    display:block
+}
+
+.invisible {
+    visibility: hidden;
+    display:none
+}
