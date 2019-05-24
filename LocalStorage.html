@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ajax Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
+    <script src="/LocalStorage/LocalStorage.js"></script>
+</head>
+<body>
+    <!--Navigation bar-->
+    <div class="container masthead">
+        <div class="navbar  navbar-static-top">
+            <div class="container-fluid">
+                <ul>
+                    <li><a href="/index.html">Index</a></li>
+                    <li><a href="/Javascript1/JavaScript1.html">Javascript1</a></li>
+                    <li><a href="/Javascript2/JavaScript2.html">Javascript2</a></li>
+                    <li><a href="/Ajax/Ajax.html">Ajax</a></li>
+                    <li><a class="active" href="LocalStorage.html">Local Storage</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="BooksCon" class="container">
+
+        <h2>Books</h2>
+        <br>
+        <label for="isbn">Enter ISBN Number:</label>
+        <input id="isbn" name="isbn" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" maxlength="13" type="text" required>
+        <label id="isbnValidate" class="invisible required">ISBN Number is required</label>
+        <div id="head">
+        </div>
+        <br>
+        <button type="submit" id="btnSearch" class="btn-rick left">Search</button><button type="submit" id="btnClear" class="btn-rick right">Clear Results</button>
+
+        <br>
+        <div id="divTable" class="invisible">
+            <table id="Books" class="left" border="1" cellpadding="1" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="center">Title</th>
+                        <th class="center">Publisher</th>
+                        <th class="center">Published</th>
+                        <th class="center">Pages</th>
+                        <th class="center">ISBN(s)</th>
+                        <th class="center">Description</th>
+                        <th class="center">Genre</th>
+                        <th class="center">Link</th>
+                        <th class="center">Author</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th class="center">Title</th>
+                        <th class="center">Publisher</th>
+                        <th class="center">Published</th>
+                        <th class="center">Pages</th>
+                        <th class="center">ISBN(s)</th>
+                        <th class="center">Description</th>
+                        <th class="center">Genre</th>
+                        <th class="center">Link</th>
+                        <th class="center">Author</th>
+                    </tr>
+                </tfoot>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
