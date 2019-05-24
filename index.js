@@ -33,10 +33,10 @@
 
     let s1 = new Score(1, 'JavaScript - Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays', '05/11/2019', '05/10/2019', 'Received a grade of Skilled', 10, '../Javascript1/JavaScript1.html','');
     let s2 = new Score(2, 'JavaScript Objects - Object Creation Functions, Inheritance, Properties, Methods, Instantiation', '05/10/2019', '05/12/2019', 'Received a grade of skilled', 10, '../Javascript2/JavaScript2.html', '');
-    let s3 = new Score(3, 'JSON Parse, Stringify', '05/17/2019', '', 'first attempt. please review', 0, '../Ajax/Ajax.html', '');
-    let s4 = new Score(4, 'AJAX requesting a JSON file', '05/17/2019', '', 'first attempt. please review', 0, '../Ajax/Ajax.html', '');
-    let s5 = new Score(5, 'Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects', '05/24/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
-    let s6 = new Score(6, 'DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.', '05/31/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
+    let s3 = new Score(3, 'JSON Parse, Stringify', '05/17/2019', '05/19/2019', 'Received a grade of Skilled', 0, '../Ajax/Ajax.html', '');
+    let s4 = new Score(4, 'AJAX requesting a JSON file', '05/17/2019', '05/19/5019', 'Received a grade of Skilled', 0, '../Ajax/Ajax.html', '');
+    let s5 = new Score(5, 'Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects', '05/24/2019', '', 'First attempt plaese review', 0, '../LocalStorage/LocalStorage.html', '');
+    let s6 = new Score(6, 'DOM Manipulation Using createElement, appendChild, insertBefore, removeChild, etc.', '05/31/2019', '', 'Not submitted yet', 0, '../LocalStorage/LocalStorage.html', '');
     let s7 = new Score(7, 'Manipulating CSS Class Properties Using JavaScript', '05/31/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
     let s8 = new Score(8, 'Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript', '06/07/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
     let s9 = new Score(9, 'Standard JavaScript Events Including those for Mobile Devices(Ex.onTouchBegin, onLoad, etc.) and Animation and Transition Events', '06/07/2019', '', 'Not submitted yet', 0, '../Javascript2/JavaScript2.html', '');
