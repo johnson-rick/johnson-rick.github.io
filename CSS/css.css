@@ -8,6 +8,16 @@
 .container {
     background-color: rgba(255, 255, 255, 0.5);
 }
+#BooksCon.style1 {
+	background-image: url('../img/back1.png');
+}
+#BooksCon.style2 {
+	background-image: url('../img/back2.png');
+}
+h2.style1 {
+	font-family: 'Almendra SC';
+	color: 
+}
 
 .btn-rick {
     font-size: 70%;
@@ -187,12 +197,23 @@ input:required:hover {
 
 .visible {
     visibility: visible;
-    display:block
+    display:block;
 }
 
 .invisible {
     visibility: hidden;
-    display:none
+    display: none;
+}
+.unhide {
+    opacity: 100;
+    pointer-events: all;
+}
+.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+#inputIsbn {
+    transition: opacity 3s;
 }
 .right {
     float: right;
@@ -200,4 +221,111 @@ input:required:hover {
 
 .left {
     float: left;
+}
+@keyframes heartbeat{
+  0%
+  {
+    transform: scale( .95 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .95 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .95 );
+  }
+  100%
+  {
+    transform: scale( .95 );
+  }
+}
+
+#isbnValidate{
+  height: 50px;9  animation: heartbeat 1.5s infinite;
+}
+.inline {
+    display: inline-block;
+}
+tr {
+   -webkit-transition:background-color 0.5s linear;
+   -moz-transition: background-color 0.5s linear;
+   -o-transition: background-color 0.5s linear;
+   background-color: rgba(255, 255, 255, 0.75);
+}
+tr:nth-child(even) {
+	background-color: #CCC
+}
+tr.style1:nth-child(even) {
+	background-color: #afdde2
+}
+tr.style2:nth-child(even) {
+	background-color: #b7dacb;
+}
+.highlightRow{
+	background-color: #dde2af !important;
+}
+td { 
+    padding: 1px;
+	border:1px solid black;
+}
+td.style1 { 
+    padding: 1px;
+	border:1px dashed #22595d !important;
+	font-family: 'Acme';
+	font-size:12px;
+	padding:3px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+td.style2 { 
+    padding: 1px;
+	border:0px none;
+	font-family: 'Oswald';
+	font-size:13px;
+	padding: 8px;
+}
+table tfoot {
+	font-weight: bold;
+	font-size: 14px;
+}
+table { 
+    border-spacing: 0px;
+    border-collapse: collapse;
+	border:1px solid black;
+	width: 100%;
+}
+table.style1 {
+	border-radius: 5px !important;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border:3px dashed #22595d !important;
+}
+table.style2 {
+	border-radius: 5px !important;
+	border: 0px none !important;
+}
+th {
+	background-color: #999999;
+}
+th.style1 {
+	background-color: #43acb5;
+	color: #ffffff;
+	font-family: 'Acme';
+}
+th.style2 {
+	background-color: #779bcd;
+	font-family: 'Oswald';
+	color: #dde2af;
+}
+.top {
+	vertical-align: top;
 }
