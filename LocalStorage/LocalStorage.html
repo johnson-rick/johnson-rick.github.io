@@ -4,8 +4,13 @@
     <meta charset="utf-8" />
     <title>Ajax Example</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
-    <script src="/LocalStorage/LocalStorage.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+	<link href='https://fonts.googleapis.com/css?family=Almendra SC' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+   <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
+    <script src="../LocalStorage/LocalStorage.js"></script>
 </head>
 <body>
     <!--Navigation bar-->
@@ -22,48 +27,65 @@
             </div>
         </div>
     </div>
-    <div id="BooksCon" class="container">
+    <div id="BooksCon" class="container customStyle">
 
-        <h2>Books</h2>
-        <br>
+	<div>
+		<div class="inline"><h2 id="header">Books</h2></div>
+		<div class="right">
+		 <label for="ddlStyle">Change Style:</label>
+			<select id="ddlStyle">
+				<option value="none">Standard</option>
+				<option value="style1">Style 1</option>
+				<option value="style2">Style 2</option>
+			</select>
+		</div>
+	</div>
+        
         <label for="isbn">Enter ISBN Number:</label>
-        <input id="isbn" name="isbn" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" maxlength="13" type="text" required>
-        <label id="isbnValidate" class="invisible required">ISBN Number is required</label>
-        <div id="head">
+		<select id="ddlIsbn" class="inline">
+				<option value="-1">--Select--</option>
+		</select>
+        <div id="inputIsbn" class="top hide inline">
+            <input id="isbn" name="isbn" oninput="this.value=this.value.replace(/(?![0-9])./gmi,'')" maxlength="13" type="text" required>
+            <label id="isbnValidate" class="invisible required">ISBN Number is required</label>
         </div>
         <br>
+
         <button type="submit" id="btnSearch" class="btn-rick left">Search</button><button type="submit" id="btnClear" class="btn-rick right">Clear Results</button>
 
         <br>
+
         <div id="divTable" class="invisible">
-            <table id="Books" class="left" border="1" cellpadding="1" cellspacing="0">
+            <table id="Books" class="customStyle">
                 <thead>
                     <tr>
-                        <th class="center">Title</th>
-                        <th class="center">Publisher</th>
-                        <th class="center">Published</th>
-                        <th class="center">Pages</th>
-                        <th class="center">ISBN(s)</th>
-                        <th class="center">Description</th>
-                        <th class="center">Genre</th>
-                        <th class="center">Link</th>
-                        <th class="center">Author</th>
+                        <th class="center customStyle customStyle">Title</th>
+                        <th class="center customStyle">Publisher</th>
+                        <th class="center customStyle">Published</th>
+                        <th class="center customStyle">Pages</th>
+                        <th class="center customStyle">ISBN(s)</th>
+                        <th class="center customStyle">Description</th>
+                        <th class="center customStyle">Genre</th>
+                        <th class="center customStyle">Link</th>
+                        <th class="center customStyle">Author</th>
+						<th class="center customStyle">Remove</th>
                     </tr>
                 </thead>
+				<tbody id="tbody"></tbody>
                 <tfoot>
                     <tr>
-                        <th class="center">Title</th>
-                        <th class="center">Publisher</th>
-                        <th class="center">Published</th>
-                        <th class="center">Pages</th>
-                        <th class="center">ISBN(s)</th>
-                        <th class="center">Description</th>
-                        <th class="center">Genre</th>
-                        <th class="center">Link</th>
-                        <th class="center">Author</th>
+                        <th class="center customStyle">Title</th>
+                        <th class="center customStyle">Publisher</th>
+                        <th class="center customStyle">Published</th>
+                        <th class="center customStyle">Pages</th>
+                        <th class="center customStyle">ISBN(s)</th>
+                        <th class="center customStyle">Description</th>
+                        <th class="center customStyle">Genre</th>
+                        <th class="center customStyle">Link</th>
+                        <th class="center customStyle">Author</th>
+						<th class="center customStyle">Remove</th>
                     </tr>
                 </tfoot>
-                <tbody id="tbody"></tbody>
             </table>
         </div>
     </div>
