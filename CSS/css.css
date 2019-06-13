@@ -249,8 +249,9 @@ input:required:hover {
   }
 }
 
-#isbnValidate{
-  height: 50px;9  animation: heartbeat 1.5s infinite;
+.validationError{
+  height: 50px;
+  animation: heartbeat 1.5s infinite;
 }
 .inline {
     display: inline-block;

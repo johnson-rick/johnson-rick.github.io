@@ -13,6 +13,8 @@
         false
     );
 	
+    var ddlFragment = document.createDocumentFragment();
+
     if (hasIsbns == true) {
         var isbns = getItemFromStorage('isbns');
         if (isbns != null && isbns != undefined) {
@@ -414,7 +416,10 @@
                     if (isbnNew.toString() == isbnExisting.toString())
                     {
                         isbnValidate.innerHTML = "The ISBN: " + isbnNew + " already exists in the results.";
-                        isbnValidate.className = "visible required";
+                        isbnValidate.className = "visible required validationError";
+						var t = setTimeout(function(){
+						   isbnValidate.classList.remove('validationError');
+						},(3000));
                         return;
                     }
                 }
@@ -424,7 +429,10 @@
         if (isbnNew == null || isbnNew == undefined || isbnNew == '') {
             var isbnValidate = document.getElementById('isbnValidate');
             isbnValidate.innerHTML = 'ISBN Number is required';
-            isbnValidate.className = "visible required";
+            isbnValidate.className = "visible required validationError";
+			var t = setTimeout(function(){
+			   isbnValidate.classList.remove('validationError');
+			},(3000));
             return false;
         }
         else

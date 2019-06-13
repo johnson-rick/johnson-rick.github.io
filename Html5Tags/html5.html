@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML5 Media Tags</title>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Arbutus' rel='stylesheet'>
+<style>
+body {
+ margin: 0;
+ background: #000;
+}
+#canvas {
+	position:fixed;
+	top:0;
+	right:0;
+	z-index:200;
+}
+
+video { 
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url('img/edwards_stadium1920x1200.jpg') no-repeat; 
+	background-size: cover;  
+	-webkit-transition: 1s opacity; 
+	transition: 1s opacity; 
+}
+
+div {
+ font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;   
+ font-weight: 100; background: rgba(0,0,0,0.3); 
+ color: white; padding: 2rem; width: 33%; 
+ margin: 2rem; float: right; 
+ font-size: 1.2rem; 
+}
+
+h1 {
+ font-size: 3rem;
+ text-transform: uppercase;
+ margin-top: 0;
+ letter-spacing: .3rem;
+}
+
+a {
+ display: inline-block;
+ color: #fff;
+ text-decoration: none;
+ background: rgba(0,0,0,0.5); 
+ padding: .5rem; -webkit-transition: .6s background;
+ transition: .6s background; 
+}
+
+a:hover {
+ background: rgba(0,0,0,0.9); 
+}
+ 
+.stopfade {
+ opacity: .5; 
+}
+ 
+#pageCopy button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  -webkit-transition: .3s background;
+  transition: .3s background;
+}
+#pageCopy button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media all and (max-device-width: 800px) {
+  body { background: url("img/edwards_stadium1920x1200.jpg") #000 no-repeat center center fixed; background-size: cover; }
+  #video_back, #pageCopy button { display: none; }
+  div{width:70%;} 
+}
+</style>
+
+</head>
+<body>
+<video playsinline="" autoplay="" muted="" loop="" id="video_back">
+<source src="http://www.liralin.com/byui/Grover and Taysom.mp4" type="video/mp4">
+</video> 
+<div id="pageCopy">
+</br>
+
+<audio controls>
+  <source src="audio/cougar-fight-song.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</br>
+<strong>The Cougar Song</strong></br>
+By Clyde D. Sandgren, 1932</br>
+</br>
+<em>
+Rise all loyal Cougars and hurl your challenge to the foe.</br>
+You will fight, day or night, rain or snow.</br>
+Loyal, strong, and true</br>
+Wear the white and blue.</br>
+While we sing, get set to spring.</br>
+Come on Cougars it's up to you. Oh!</br>
+</br>
+Chorus:</br>
+Rise and shout, the Cougars are out</br>
+along the trail to fame and glory.</br>
+Rise and shout, our cheers will ring out</br>
+As you unfold your victr'y story.</br>
+</br>
+On you go to vanquish the foe for Alma Mater's sons and daughters.</br>
+As we join in song, in praise of you, our faith is strong.</br>
+We'll raise our colors high in the blue</br>
+And cheer our Cougars of BYU.</br>
+</em>
+
+
+<button>Pause</button>
+<button id="btnUnmute" onclick="unMuteVideo();">Unmute video</button>
+</div>
+<canvas id="canvas" width="600px" height="110px" />
+<script>
+WebFont.load({
+    google: {
+      families: ['Arbutus:400,700']
+    }
+  });
+  
+document.addEventListener("load", onLoad());
+var video = document.getElementById("video_back"),
+pauseButton = document.querySelector("#pageCopy button");
+
+function onLoad(){
+	startScrolling();
+}
+
+function unMuteVideo(){
+	var video = document.getElementById("video_back");
+	video.muted = false;
+}
+
+if (window.matchMedia('(prefers-reduced-motion)').matches) {
+    vid.removeAttribute("autoplay");
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+}
+
+function vidFade() {
+  video.classList.add("stopfade");
+}
+
+video.addEventListener('ended', function()
+{
+// only functional if "loop" is removed 
+video.pause();
+vidFade();
+}, false); 
+ 
+pauseButton.addEventListener("click", function() {
+  video.classList.toggle("stopfade");
+  if (video.paused) {
+    video.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    video.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+}, false);
+
+video.addEventListener('touchstart', function(e) {
+e.preventDefault();
+video.play();
+})
+
+function startScrolling(){
+    var c = document.getElementById("canvas");
+    var scroller = new Scroller(c, "RISE & SHOUT", 1, "left", "#094796");
+    scroller.doAnimation();
+}
+
+function Scroller(canvas, scrollingText, rate, direction, textColor)
+{
+    this.canvas = canvas;
+    this.text = scrollingText;
+    this.textWidth = 100;
+    this.textHeight = 150;
+    this.yloc = 60;
+    this.xloc = this.canvas.width;
+    this.rate = rate;
+    this.direction = direction;
+    this.textColor = textColor;
+    this.font = "60px 'Arbutus'";
+    var self = this;
+    this.animId;
+    if(this.direction == "up")
+    {
+        this.xloc = 0;
+        this.yloc = this.canvas.height;
+    }
+    else if(this.direction == "down")
+    {
+        this.xloc = 0;
+        this.yloc = 0;
+    }
+    this.doAnimation = function()
+    {
+        this.animId = requestAnimationFrame(function() { self.doAnimation(); });
+        if(this.textWidth == 0)
+        {
+            var context = this.canvas.getContext("2d");
+            context.font = this.font;
+            this.textWidth = context.measureText(this.text).width;
+        }
+        if(this.direction == "left")
+        {
+            if(this.textWidth + this.xloc < 0)
+            {
+                this.xloc = this.canvas.width;
+            }
+            else
+            {
+                this.xloc -= this.rate;
+            }
+        }
+        else if(this.direction == "right")
+        {
+            if(this.xloc > this.canvas.width)
+            {
+                this.xloc = - this.textWidth;
+            }
+            else
+            {
+                this.xloc += this.rate;
+            }
+        }
+        else if(this.direction == "up")
+        {
+            if(this.yloc < 0)
+            {
+                this.yloc = this.canvas.height + this.textHeight;
+            }
+            else
+            {
+                this.yloc -= this.rate;
+            }
+        }
+        else if(this.direction == "down")
+        {
+            if(this.yloc > this.canvas.height + this.textHeight)
+            {
+               this.yloc = 0;
+            }   
+            else
+            {
+                this.yloc += this.rate;
+            }
+        }
+        this.drawText();
+    }
+    this.drawText = function()
+    {
+        var context = this.canvas.getContext("2d");
+        context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        context.font = this.font;
+        context.fillStyle = this.textColor;
+		context.lineWidth = 5;
+		context.strokeStyle = 'white';
+		context.strokeText(this.text, this.xloc, this.yloc);
+        context.fillText(this.text, this.xloc, this.yloc);
+    };
+}
+</script>
+
+
+</body></html>
