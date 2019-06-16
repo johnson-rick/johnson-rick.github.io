@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <title>My annimation example</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<script>
+setTimeout(swapBackground, 20000);
+
+function swapBackground() {  
+  //alert("Test");
+  //console.log('test');
+  var body = document.body;
+  var finish = document.getElementById("finish");
+  var bugs2 = document.getElementById("bugs2");
+  var tortoise2 = document.getElementById("tortoise2");
+  
+  body.style.background = "url(img/back2.jpg) no-repeat center center fixed";
+  body.style.backgroundSize = "100% 100%";
+  
+  finish.classList.remove("invisible");
+  finish.classList.add("visible");
+  
+  bugs2.classList.remove("invisible");
+  bugs2.classList.add("visible");
+  
+  tortoise2.classList.remove("invisible");
+  tortoise2.classList.add("visible");
+  tortoise2.classList.add("race2");
+  setTimeout(jump, 19500);
+}
+
+function jump()
+{	
+	var tortoise2 = document.getElementById("tortoise2");
+	tortoise2.classList.add("winner");
+}
+</script>
+<body>
+    <div class="sky">
+        <img class="cloud" src="img/cloud.png" />
+        <img class="cloud" src="img/cloud.png" />
+    </div>
+    <div class="road">   
+        <img class="bugs" src="img/bugs.png">
+		<img id="bugs2" class="bugs2 invisible" src="img/bugs2.png">
+        <img class="tortoise" src="img/tortoise.png">
+		<img id="tortoise2" class="tortoise2 invisible" src="img/tortoise.png">
+		<img id="finish" class="finish skewed invisible" src="img/finish.png">
+    </div>
+</body>
