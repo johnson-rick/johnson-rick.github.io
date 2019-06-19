@@ -9,8 +9,8 @@
 	<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
-   <link href="../CSS/css.css" type="text/css" rel="stylesheet" />
-    <script src="../LocalStorage/LocalStorage.js"></script>
+   <link href="css.css" type="text/css" rel="stylesheet" />
+    <script src="Transitions_Transform.js"></script>
 </head>
 <body>
     <!--Navigation bar-->
@@ -22,8 +22,8 @@
                     <li><a href="/Javascript1/JavaScript1.html">Javascript1</a></li>
                     <li><a href="/Javascript2/JavaScript2.html">Javascript2</a></li>
                     <li><a href="/Ajax/Ajax.html">Ajax</a></li>
-                    <li><a class="active" href="LocalStorage.html">Local Storage</a></li>
-                    <li><a href="/Transitions_Transforms/Transitions_Transforms.html">Transitions & Transforms</a></li>
+                    <li><a href="LocalStorage/LocalStorage.html">Local Storage</a></li>
+                    <li><a class="active" href="Transitions_Transforms.html">Transitions & Transforms</a></li>
                 </ul>
             </div>
         </div>
@@ -52,15 +52,16 @@
         </div>
         <br>
 
-        <button type="submit" id="btnSearch" class="btn-rick left">Search</button><button type="submit" id="btnClear" class="btn-rick right">Clear Results</button>
+        <button type="submit" id="btnSearch" class="btn-rick left customStyle">Search</button>
+		<button type="submit" id="btnClear" class="btn-rick right customStyle">Clear Results</button>
 
         <br>
 
-        <div id="divTable" class="invisible">
+        <div id="divTable" class="hideTable">
             <table id="Books" class="customStyle">
                 <thead>
                     <tr>
-                        <th class="center customStyle customStyle">Title</th>
+                        <th class="center customStyle">Title</th>
                         <th class="center customStyle">Publisher</th>
                         <th class="center customStyle">Published</th>
                         <th class="center customStyle">Pages</th>
